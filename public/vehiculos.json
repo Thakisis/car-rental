@@ -1,0 +1,358 @@
+{
+    "vehiculos": [
+        {
+            "id": "1",
+            "alquilable": "S",
+            "caracteristicas": [
+                {
+                    "autonomiaKm": 547,
+                    "año": 2024,
+                    "cajaCambio": "Automatico",
+                    "descripcion": "Coche muy cómodo y amplio",
+                    "etiquetaECO": true,
+                    "litros": 649,
+                    "maximodeKm": 1000,
+                    "numeroBolsasmaletero": 5,
+                    "numplazas": 5,
+                    "tipoVehiculo": "BEV",
+                    "altoConfort": true,
+                    "altasPrestaciones": true,
+                    "perfectoEstado": true
+                }
+            ],
+            "ciudades_vehiculo": [
+                "Madrid",
+                "Barcelona",
+                "Valencia",
+                "Alicante",
+                "Malaga"
+            ],
+            "extras": [
+                {
+                    "gps": true,
+                    "sillaBebe": true,
+                    "proteccionenCarretera": true,
+                    "exenciondeFranquicia": 120,
+                    "opcionSeguroTodoRiesgo": true
+                }
+            ],
+            "fecha_fin": "29-02-2024T18:00",
+            "fecha_ini": "26-02-2024T07:00",
+            "geo_oficina": {
+                "coordinates": {
+                    "lat": 40.41669,
+                    "lon": -3.700346
+                }
+            },
+            "imagen_url": "https://www.tesla.com/ownersmanual/images/GUID-B5641257-9E85-404B-9667-4DA5FDF6D2E7-online-en-US.png",
+            "marca_vehiculo": "Tesla",
+            "modelo_vehiculo": "Model 3",
+            "marcay_modelo_vehiculo": "Tesla Model 3",
+            "precio": [
+                {
+                    "por1DiaEuros": 159,
+                    "cancelacionGratis": true,
+                    "ofertaEspecial": true,
+                    "precioOferta": 120
+                }
+            ],
+            "tipo_vehiculo": "Coche",
+            "seguro": [
+                {
+                    "coberturaParcialcolisionFranquiciaQty": 1000,
+                    "coberturaParcialcolisionFranquicia": true,
+                    "coberturaRobo": true,
+                    "coberturaRobocolisionFranquiciaQty": 1000
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "alquilable": "S",
+            "caracteristicas": [
+                {
+                    "autonomiaKm": 600,
+                    "año": 2025,
+                    "cajaCambio": "Automatico",
+                    "descripcion": "Coche muy cómodo y rápido y veloz",
+                    "etiquetaECO": true,
+                    "litros": 649,
+                    "maximodeKm": 120000,
+                    "numeroBolsasmaletero": 6,
+                    "numplazas": 7,
+                    "tipoVehiculo": "PHEV",
+                    "altoConfort": true,
+                    "altasPrestaciones": true,
+                    "perfectoEstado": true
+                }
+            ],
+            "ciudades_vehiculo": [
+                "Madrid",
+                "Zaragoza"
+            ],
+            "extras": [
+                {
+                    "gps": false,
+                    "sillaBebe": false,
+                    "proteccionenCarretera": false,
+                    "exenciondeFranquicia": 180,
+                    "opcionSeguroTodoRiesgo": false
+                }
+            ],
+            "fecha_fin": "08-03-2024T20:00",
+            "fecha_ini": "05-03-2024T07:00",
+            "geo_oficina": {
+                "coordinates": {
+                    "lat": 40.41669,
+                    "lon": -3.700346
+                }
+            },
+            "imagen_url": "https://www.bmw.com",
+            "marca_vehiculo": "BMW",
+            "modelo_vehiculo": "i5",
+            "marcay_modelo_vehiculo": "BMW i5",
+            "precio": [
+                {
+                    "por1DiaEuros": 200,
+                    "cancelacionGratis": false,
+                    "ofertaEspecial": false,
+                    "precioOferta": 195
+                }
+            ],
+            "tipo_vehiculo": "Moto",
+            "seguro": [
+                {
+                    "coberturaParcialcolisionFranquiciaQty": 1000,
+                    "coberturaParcialcolisionFranquicia": true,
+                    "coberturaRobo": true,
+                    "coberturaRobocolisionFranquiciaQty": 1000
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "alquilable": "S",
+            "caracteristicas": [
+                {
+                    "autonomiaKm": 600,
+                    "año": 2025,
+                    "cajaCambio": "Automatico",
+                    "descripcion": "Coche muy cómodo y rápido y veloz",
+                    "etiquetaECO": true,
+                    "litros": 649,
+                    "maximodeKm": 10000000000,
+                    "numeroBolsasmaletero": 6,
+                    "numplazas": 7,
+                    "tipoVehiculo": "BEV",
+                    "altoConfort": true,
+                    "altasPrestaciones": true,
+                    "perfectoEstado": true
+                }
+            ],
+            "ciudades_vehiculo": [
+                "Madrid",
+                "Zaragoza"
+            ],
+            "extras": [
+                {
+                    "gps": false,
+                    "sillaBebe": false,
+                    "proteccionenCarretera": false,
+                    "exenciondeFranquicia": 180,
+                    "opcionSeguroTodoRiesgo": false
+                }
+            ],
+            "fecha_fin": "08-03-2024T20:00",
+            "fecha_ini": "05-03-2024T07:00",
+            "geo_oficina": {
+                "coordinates": {
+                    "lat": 40.41669,
+                    "lon": -3.700346
+                }
+            },
+            "imagen_url": "https://www.bmw.com",
+            "marca_vehiculo": "Nissan",
+            "modelo_vehiculo": "Leaf",
+            "marcay_modelo_vehiculo": "Nissan Leaf",
+            "precio": [
+                {
+                    "por1DiaEuros": 200,
+                    "cancelacionGratis": false,
+                    "ofertaEspecial": false,
+                    "precioOferta": 195
+                }
+            ],
+            "tipo_vehiculo": "Moto",
+            "seguro": [
+                {
+                    "coberturaParcialcolisionFranquiciaQty": 1000,
+                    "coberturaParcialcolisionFranquicia": true,
+                    "coberturaRobo": true,
+                    "coberturaRobocolisionFranquiciaQty": 1000
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "alquilable": "S",
+            "caracteristicas": [
+                {
+                    "autonomiaKm": 600,
+                    "año": 2025,
+                    "cajaCambio": "Manual",
+                    "descripcion": "Coche muy cómodo y rápido y veloz",
+                    "etiquetaECO": true,
+                    "litros": 649,
+                    "maximodeKm": 10000000000,
+                    "numeroBolsasmaletero": 6,
+                    "numplazas": 7,
+                    "tipoVehiculo": "SHEV",
+                    "altoConfort": true,
+                    "altasPrestaciones": true,
+                    "perfectoEstado": true
+                }
+            ],
+            "ciudades_vehiculo": [
+                "Madrid",
+                "Zaragoza"
+            ],
+            "extras": [
+                {
+                    "gps": false,
+                    "sillaBebe": false,
+                    "proteccionenCarretera": false,
+                    "exenciondeFranquicia": 180,
+                    "opcionSeguroTodoRiesgo": false
+                }
+            ],
+            "fecha_fin": "08-03-2024T20:00",
+            "fecha_ini": "05-03-2024T07:00",
+            "geo_oficina": {
+                "coordinates": {
+                    "lat": 40.41669,
+                    "lon": -3.700346
+                }
+            },
+            "imagen_url": "https://cdn-images.motor.es/image/m/800w.webp/fotos-noticias/2019/02/min652x435/chevrolet-volt-ultima-unidad-gm-heritage-center-201954990_1.jpg",
+            "marca_vehiculo": "Chevrolet",
+            "modelo_vehiculo": "Volt",
+            "marcay_modelo_vehiculo": "Chevrolet Volt",
+            "precio": [
+                {
+                    "por1DiaEuros": 200,
+                    "cancelacionGratis": false,
+                    "ofertaEspecial": false,
+                    "precioOferta": 195
+                }
+            ],
+            "tipo_vehiculo": "Moto",
+            "seguro": [
+                {
+                    "coberturaParcialcolisionFranquiciaQty": 1450,
+                    "coberturaParcialcolisionFranquicia": true,
+                    "coberturaRobo": true,
+                    "coberturaRobocolisionFranquiciaQty": 1450
+                }
+            ]
+        }
+    ],
+    "aggs": {
+        "aggregates": [
+            {
+                "cajaCambio": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 3,
+                        "valor": "Automatico"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "Manual"
+                    }
+                ]
+            },
+            {
+                "tiposElectrico": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 2,
+                        "valor": "BEV",
+                        "valorHumano": "100% Eléctrico"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "PHEV",
+                        "valorHumano": "Híbrido Enchufable"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "SHEV",
+                        "valorHumano": "Híbrido Puro"
+                    },
+                    {
+                        "valorHumano": "Híbrido No Enchufable",
+                        "valor": "HEV",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    },
+                    {
+                        "valorHumano": "Híbrido Ligero",
+                        "valor": "MHEV",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    }
+                ]
+            },
+            {
+                "tiposVehiculo": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 3,
+                        "valor": "Moto"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "Coche"
+                    }
+                ]
+            },
+            {
+                "maximoDeKms": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 2,
+                        "valor": "Limitado"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 2,
+                        "valor": "Ilimitado"
+                    }
+                ]
+            },
+            {
+                "maximoNumPlazas": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 3,
+                        "valor": "7"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "5"
+                    },
+                    {
+                        "valor": "6",
+                        "numVehiculos": 0,
+                        "disponible": true
+                    }
+                ]
+            }
+        ]
+    }
+}
