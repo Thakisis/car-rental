@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import * as React from "react"
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"
 
@@ -13,7 +13,7 @@ const ToggleGroupContext = React.createContext({
 const ToggleGroup = React.forwardRef(({ className, variant, size, children, ...props }, ref) => (
   <ToggleGroupPrimitive.Root
     ref={ref}
-    className={cn("flex items-center justify-center gap-1", className)}
+    className={cn("inline-flex items-center ", className)}
     {...props}>
     <ToggleGroupContext.Provider value={{ variant, size }}>
       {children}
@@ -36,7 +36,7 @@ const ToggleGroupItem = React.forwardRef(({ className, children, variant, size, 
       {...props}>
       {children}
     </ToggleGroupPrimitive.Item>)
-  );
+  )
 })
 
 ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName

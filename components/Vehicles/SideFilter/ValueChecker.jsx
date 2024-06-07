@@ -8,7 +8,6 @@ export function ValueChecker({ field, value, text, disponible, numVehiculos, ful
 
 
     const router = useRouter()
-    const searchParams = useSearchParams()
     const switchChecker = (isChecked) => {
 
         const newParams = changeParams(fullParams, field, value, isChecked)
@@ -19,7 +18,7 @@ export function ValueChecker({ field, value, text, disponible, numVehiculos, ful
 
 
 
-        router.push(`/vehiculos?${queryUrl}`)
+        router.push(`/vehiculos?${queryUrl}`, { shallow: true })
 
 
     }
@@ -36,17 +35,15 @@ export function ValueChecker({ field, value, text, disponible, numVehiculos, ful
     </div>)
 
 }
-function createQueryUrl(params) {
 
+function createQueryUrl(params) {
     const url = Object.entries(params).map(([field, data]) => {
         if (!Array.isArray(data)) {
-
             return `&${field}=${data}`
         }
         return data.map(value => `&${field}=${value}`).join("")
     }).join('')
     return url.substring(1, url.length)
-
 }
 
 function changeParams(params, field, value, isChecked) {

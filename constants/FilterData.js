@@ -7,7 +7,9 @@ export const carType = {
     elefante: 2,
 
 }
-export const carText = ["Coche", "Moto", "Elefante"]
+export const carText = [{ field: "Coche", order: 0 },
+{ field: "Moto", order: 0 }, "Elefante"
+]
 
 export const engineType = {
     electrico: 0,
@@ -45,63 +47,135 @@ export const brandText = [
 
 
 const allFilters =
-    [
-        {
-            title: "Caja de Cambios",
-            field: "cajaCambio",
-            icon: "CajaCambios",
-            values: [{ value: "Automatico", text: "Automatico" }, { value: "Manual", text: "Manual" }]
-        },
-        {
-            title: "Tipo de Electrico",
-            field: "tiposElectrico",
-            icon: "Motor",
-            values: [
-                {
-                    value: "BEV",
-                    text: "100% Eléctrico"
-                },
-                {
-                    value: "PHEV",
-                    text: "Híbrido Enchufable"
-                },
-                {
-                    value: "SHEV",
-                    text: "Híbrido Puro"
-                },
-                {
-                    text: "Híbrido No Enchufable",
-                    value: "HEV",
-                },
-                {
-                    text: "Híbrido Ligero",
-                    value: "MHEV",
-                }
-            ]
-        },
-        {
-            title: "Tipo de Vehiculo",
-            field: "tiposVehiculo",
-            icon: "Vehiculo",
-            values: [{ value: "Coche", text: "Coche" }, { value: "Moto", text: "Moto" }]
-        },
-        {
-            title: "Rango Autonomia",
-            field: "maximoDeKms",
-            icon: "Autonomia",
-            values: [{ value: "Limitado", text: "Limitado" }, { value: "Ilimitado", text: "Ilimitado" }]
-        },
-        {
-            title: "Numero de plazas",
-            field: "maximoNumPlazas",
-            icon: "Plazas",
-            values: [{ value: "5", text: "5 plazas" }, { value: "6", text: "6 plazas" }, { value: "7", text: "7 plazas" }]
-        },
-    ]
+{
+    cajaCambio: {
+        title: "Caja de Cambios",
+        field: "cajaCambio",
+        icon: "CajaCambios",
+        values: [
+            {
+                value: "Automatico",
+                text: "Automatico",
+                shortText: "Automatico"
+            },
+            {
+                value: "Manual",
+                text: "Manual",
+                shortText: "Manual"
+            }
+        ]
+    },
+    tiposElectrico: {
+        title: "Tipo de Electrico",
+        field: "tiposElectrico",
+        icon: "Motor",
+        values: [
+            {
+                value: "BEV",
+                text: "100% Eléctrico",
+                shortText: "100% Eléctrico"
 
-const Filters = {
-    home: [],
-    vehiculos: ["cajaCambio", "tiposElectrico", "tiposVehiculo", "maximoDeKms", "maximoNumPlazas"]
+            },
+            {
+                value: "PHEV",
+                text: "Híbrido Enchufable",
+                shortText: "Híbr. Enchufable"
+            },
+            {
+                value: "SHEV",
+                text: "Híbrido Puro",
+                shortText: "Híbr. Puro"
+            },
+            {
+                value: "HEV",
+                text: "Híbrido No Enchufable",
+                shortText: "Híbr. No Enchufable"
+
+            },
+            {
+                value: "MHEV",
+                text: "Híbrido Ligero",
+                shortText: "Híbr. Ligero"
+
+            }
+        ]
+    },
+    tiposVehiculo: {
+        title: "Tipo de Vehiculo",
+        field: "tiposVehiculo",
+        icon: "Vehiculo",
+        values: [
+            {
+                value: "Coche",
+                text: "Coche",
+                shortText: "Coche"
+            },
+            {
+                value: "Moto",
+                text: "Moto",
+                shortText: "Moto"
+            }
+        ]
+    },
+    maximoDeKms: {
+        title: "Rango Autonomia",
+        field: "maximoDeKms",
+        icon: "Autonomia",
+        values: [
+            {
+                value: "Limitado",
+                text: "Limitado",
+                shortText: "Limitado"
+            },
+            {
+                value: "Ilimitado",
+                text: "Ilimitado",
+                shortText: "Ilimitado"
+            }
+        ]
+    },
+    maximoNumPlazas: {
+        title: "Numero de plazas",
+        field: "maximoNumPlazas",
+        icon: "Plazas",
+        values: [
+            {
+                value: "5",
+                text: "5 plazas",
+                shortText: "5 plazas"
+            },
+            {
+                value: "6",
+                text: "6 plazas",
+                shortText: "6 plazas"
+            },
+
+            {
+                value: "7",
+                text: "7 plazas",
+                shortText: "7 plazas"
+            }
+        ]
+    }
 }
 
-export const vehiculosFilter = allFilters.filter(({ field }) => Filters.vehiculos.includes(field))
+const Filters = {
+    home: [{ field: "tiposVehiculo", order: 0 },
+    { field: "tiposElectrico", order: 1 }]
+    ,
+    vehiculos: [{ field: "cajaCambio", order: 0 },
+    { field: "tiposElectrico", order: 1 },
+
+    { field: "tiposVehiculo", order: 2 },
+
+    { field: "maximoDeKms", order: 3 }, { field: "maximoNumPlazas", order: 4 }
+    ]
+
+}
+
+export const vehiculosFilter = Filters.vehiculos.toSorted((a, b) => a - b).map(({ field }) => allFilters[field])
+console.log("------------------")
+console.log(vehiculosFilter)
+console.log("------------------")
+export const HomeFilter = Filters.home.toSorted((a, b) => a - b).map(({ field }) => allFilters[field])
+
