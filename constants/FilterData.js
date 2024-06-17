@@ -160,22 +160,18 @@ const allFilters =
 }
 
 const Filters = {
-    home: [{ field: "tiposVehiculo", order: 0 },
-    { field: "tiposElectrico", order: 1 }]
-    ,
-    vehiculos: [{ field: "cajaCambio", order: 0 },
-    { field: "tiposElectrico", order: 1 },
-
-    { field: "tiposVehiculo", order: 2 },
-
-    { field: "maximoDeKms", order: 3 }, { field: "maximoNumPlazas", order: 4 }
+    home: [
+        { field: "tiposVehiculo", order: 0 },
+        { field: "tiposElectrico", order: 1 }
+    ],
+    vehiculos: [
+        { field: "cajaCambio", order: 0 },
+        { field: "tiposElectrico", order: 1 },
+        { field: "tiposVehiculo", order: 2 },
+        { field: "maximoDeKms", order: 3 }, { field: "maximoNumPlazas", order: 4 }
     ]
-
 }
 
 export const vehiculosFilter = Filters.vehiculos.toSorted((a, b) => a - b).map(({ field }) => allFilters[field])
-console.log("------------------")
-console.log(vehiculosFilter)
-console.log("------------------")
 export const HomeFilter = Filters.home.toSorted((a, b) => a - b).map(({ field }) => allFilters[field])
 

@@ -1,35 +1,65 @@
 import { filtercarType } from "./filters"
-export async function getCars(params) {
-    const res = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
 
-    console.log(params)
-    // The return value is *not* serialized
-    // You can return Date, Map, Set, etc.
 
-    if (!res.ok) {
-        // This will activate the closest `error.js` Error Boundary
-        throw new Error('Failed to fetch data')
+export async function getVehicles(params, page = 1) {
+    //await sleep(3000)
+    const pageSize = 5
+
+    const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
+    if (!response.ok) {
+        return { codeError: response.status }
     }
-    const data = await res.json()
-    const cars = data.vehiculos
+    const data = await response.json()
+    const addCars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) =>
+        data.vehiculos.map((car) => (
+            { ...car, id: i*10+parseInt(car.id) , marca_vehiculo: `${car.marca_vehiculo}-${i}` }
+        ))).flat()
+    const totalPages = Math.ceil(addCars.length / pageSize)
+    const vehiculos = addCars.slice((page - 1) * pageSize, page * pageSize)
+
+    return { totalPages, page, totalVehiculos: addCars.length, vehiculos }
+
+}
+
+export async function getDataFilters() {
+
+    const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
+    if (!response.ok) {
+        return { codeError: response.status }
+    }
+    const data = await response.json()
+
     const filters = data.aggs.aggregates.reduce((allfilters, filter) => {
         let field = Object.keys(filter)[0]
         const optionObject = filter[field].reduce((options, { disponible, numVehiculos, valor }) => ({ ...options, [valor]: { disponible, numVehiculos } }), {})
         return { ...allfilters, [field]: { ...optionObject } }
 
     }, {})
-    let vehiculos = cars
-    if (params.tiposVehiculo) {
-        vehiculos = Array.isArray(params.tiposVehiculo) ? vehiculos.filter(({ tipo_vehiculo }) => params.tiposVehiculo.includes(tipo_vehiculo)) :
-            vehiculos.filter(({ tipo_vehiculo }) => params.tiposVehiculo === tipo_vehiculo)
-    }
-    console.log(vehiculos)
-    return { vehiculos, filters }
-    //return vehicles
-    //return filterCars(vehicles["vehiculos"], params)
+    return filters
 }
 
 
-function filterCars(cars, params) {
+export function filterCars(cars, params) {
     return cars.filter((car) => filtercarType[params[`carType`]])
+}
+export async function getVehicle(id) {
+    
+    const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
+    if (!response.ok) {
+        return { codeError: response.status }
+    }
+    const data = await response.json()
+
+    // falsear el id
+    const idCar=parseInt(id)%10
+    
+    const vehiculo=data.vehiculos.find(car => parseInt(car.id) === idCar)
+    
+    //console.log(vehiculo)
+    
+    return vehiculo
+
+}
+function sleep(ms = 0) {
+    return new Promise(resolve => setTimeout(resolve, ms))
 }

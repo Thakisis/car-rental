@@ -1,29 +1,37 @@
 "use client"
 import { Checkbox } from "@/components/ui/checkbox"
-import { useSearchParams, useRouter } from "next/navigation"
-import { useCallback } from "react"
+import { changeParams, createQueryUrl } from "@/lib/queryParams"
+import { useRouter } from "next/navigation"
+import useCarStore from "@/Store"
+
 export function ValueChecker({ field, value, text, disponible, numVehiculos, fullParams, checked }) {
+    const switchChecker = useCarStore(state => state.Actions.switchChecker)
 
 
 
 
     const router = useRouter()
-    const switchChecker = (isChecked) => {
+    const switchHandler = (isChecked) => {
+        switchChecker(field, value, isChecked)
+        const newFieldParam = changeParams(fullParams[field], value, isChecked)
+        let finalParams = fullParams
+        if (newFieldParam) {
+            finalParams = { ...fullParams, [field]: newFieldParam }
 
-        const newParams = changeParams(fullParams, field, value, isChecked)
-
-        const queryUrl = createQueryUrl(newParams)
-
-
+        } else {
+            delete finalParams[field]
+        }
 
 
+
+        const queryUrl = createQueryUrl(finalParams)
 
         router.push(`/vehiculos?${queryUrl}`, { shallow: true })
 
 
     }
     return (<div className={`items-top flex space-x-2 ${disponible ? "text-gray-800" : "text-red-500"}`}>
-        <Checkbox id={value} disabled={!disponible} checked={checked} onCheckedChange={switchChecker} />
+        <Checkbox id={value} disabled={!disponible} checked={checked} onCheckedChange={switchHandler} />
         <div className="grid gap-1.5 leading-none">
             <label
                 htmlFor={value}
@@ -36,17 +44,10 @@ export function ValueChecker({ field, value, text, disponible, numVehiculos, ful
 
 }
 
-function createQueryUrl(params) {
-    const url = Object.entries(params).map(([field, data]) => {
-        if (!Array.isArray(data)) {
-            return `&${field}=${data}`
-        }
-        return data.map(value => `&${field}=${value}`).join("")
-    }).join('')
-    return url.substring(1, url.length)
-}
 
-function changeParams(params, field, value, isChecked) {
+
+
+function changeParams2(params, field, value, isChecked) {
     const paramSelected = params[field]
     // caso es un array y se ha marcado como checked el parametro ya tiene 2 elementos en la url, el nuevo se añade
     if (isChecked && Array.isArray(paramSelected)) return { ...params, [field]: [...paramSelected, value] }

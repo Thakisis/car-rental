@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator"
 import Toggles from "./Toggles"
 import LinkSearch from "./LinkSearch"
 import MarcasInput from "./MarcasInput"
-
+import DateButton from "./DatePicker/DateButton"
 const Widget = () => {
     return (
         <Card className="w-full">
@@ -14,12 +14,14 @@ const Widget = () => {
             </CardHeader>
             <CardContent className="my-5">
                 <div>
-                    <Toggles></Toggles>
+                    <Toggles />
                 </div>
-                <MarcasInput></MarcasInput>
+                <MarcasInput />
+                <h3 className="mt-4 mb-2 text-white">Seleccione periodo de Alquiler</h3>
+                <DateButton />
             </CardContent>
-            <CardFooter className="flex justify-between">
-                <Button variant="outline">Cancel</Button>
+            <CardFooter className="flex justify-end">
+
                 <LinkSearch></LinkSearch>
             </CardFooter>
         </Card>

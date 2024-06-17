@@ -25,7 +25,7 @@ export default function SideFilter(props) {
                 </div>
                 <SheetFooter>
                     <SheetClose asChild>
-                        <Button type="submit">Save changes</Button>
+
                     </SheetClose>
                 </SheetFooter>
             </SheetContent>

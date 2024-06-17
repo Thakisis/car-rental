@@ -1,34 +1,47 @@
-import { carType } from '@/constants'
 import { create } from 'zustand'
+import { purgeFilters } from './StoreHelpers'
+import { setDate } from 'date-fns'
+
 const useCarStore = create((set, get) => ({
     homeFilter: {
-        carType: [],
-        engineType: [],
+        tiposVehiculo: [],
+        tiposElectrico: [],
         DeliveryAddress: "",
         alternativeDelivery: "",
-        brands: [],
-        pickupTimer: "",
-        returnTimer: "",
+        marcas: [],
+    
     },
+    datesRental:{from:null,to:null},
+    isCalendar:false,
     cleanFilter: [],
     Actions: {
         setHomeFilter(newFilter) {
-            set(({ homeFilter }) => ({ homeFilter: { ...homeFilter, ...newFilter } }))
-            get().Actions.purgeFilter()
+            const newFilters=purgeFilters({...get().homeFilter, ...newFilter})
+            set({homeFilter:newFilters})
         },
-        purgeFilter() {
-            const cleanFilter = {}
-            Object.entries(get().homeFilter).forEach(([key, value]) => {
-                if (value === "") return
-                if (value?.length === 0) return
-                cleanFilter[key] = value
-            })
+        switchChecker(field, value, isChecked) {
+    
+        
+             const fields=['tiposVehiculo','tiposElectrico']
+            if(fields.includes(field)){
+                const filtro=get().homeFilter[field]
+                const newFiltro=isChecked ? [...filtro, value] : filtro.filter(item => item !== value)
+                set({homeFilter:{...get().homeFilter,[field]:newFiltro}})
 
-            set({ cleanFilter: cleanFilter })
-
+            }  
+        },
+        setDatesRental(dates) { 
+            set({datesRental:dates})
+        },
+        setIsCalendar(isCalendar) {
+            set({isCalendar:isCalendar})
+        },
+        setDatesRental(dates) {
+            set({datesRental:dates})
         }
-    }
-
-
+    }     
 }))
+
 export default useCarStore
+
+   

@@ -1,0 +1,21 @@
+.brand {
+    transform: translate(var(--box-size), 0px);
+    opacity: 0;
+
+    animation: calc(var(--anim-time) * 1s) linear movehor;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes movehor {
+
+
+    0% {
+        transform: translate(var(--box-size), 0px);
+    }
+
+    100% {
+        transform: translate(var(--text-size), 0px);
+    }
+}

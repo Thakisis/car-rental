@@ -1,15 +1,23 @@
-import { getCars } from "@/server/Queries"
-import FilterCard from "./FilterCard"
-import SideFilter from "./SideFilter/SideFilter"
+import SideFilter from "./SideFilter"
+import { decodeQuery } from "@/lib/queryParams"
+import Carlist from "./Carlist"
+import { Suspense } from "react"
 export async function Vehicles({ params }) {
-    const { vehiculos, filters } = await getCars(params)
-    const listCars = vehiculos.map((car) => <FilterCard key={car.id} {...car} />)
+
+
+    const decodeParams = decodeQuery(params)
+
+
     return (
         <div >
             <div>
-                <SideFilter filters={filters} params={params} />
+                <SideFilter params={decodeParams} />
             </div>
-            <div className=" px-24  flex flex-col items-center justify-center gap-10">{listCars}</div>
+            <div className=" px-24  flex flex-col items-center justify-center gap-10 py-10">
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Carlist {...decodeParams} />
+                </Suspense>
+            </div>
 
         </div>
     )
