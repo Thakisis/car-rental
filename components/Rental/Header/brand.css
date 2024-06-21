@@ -1,10 +1,30 @@
+.brandcont {
+    display: flex;
+
+    justify-content: flex-start;
+
+    vertical-align: top;
+    height: 100%;
+}
+
 .brand {
+    font-size: 49vw;
+    display: block;
+    line-height: 39vw;
+    justify-content: flex-start;
     transform: translate(var(--box-size), 0px);
     opacity: 0;
-
     animation: calc(var(--anim-time) * 1s) linear movehor;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
+
+}
+
+@media (min-width: 1280px) {
+    .brand {
+        font-size: 34vw;
+        line-height: 27vw;
+    }
 
 }
 

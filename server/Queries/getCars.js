@@ -1,4 +1,6 @@
+
 import { filtercarType } from "./filters"
+import { transformdata } from "./TransformData"
 
 
 export async function getVehicles(params, page = 1) {
@@ -53,7 +55,7 @@ export async function getVehicle(id) {
     // falsear el id
     const idCar=parseInt(id)%10
     
-    const vehiculo=data.vehiculos.find(car => parseInt(car.id) === idCar)
+    const vehiculo=transformdata(data.vehiculos.find(car => parseInt(car.id) === idCar))
     
     //console.log(vehiculo)
     

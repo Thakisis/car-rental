@@ -1,6 +1,5 @@
 
 export function transformdata(coche) {
-    if(!coche) return null
     const caracteristicas = coche.caracteristicas[0]
     const precio = coche.precio[0]
     const extras = coche.extras[0]
@@ -16,8 +15,10 @@ export function transformdata(coche) {
         id: coche.id,
         tipo: coche.tipo_vehiculo,
         image: coche.imagen_url,
-        nombre: `${coche.marca_vehiculo} ${coche.modelo_vehiculo}`, //coche.marcay_modelo_vehiculo,
+        marca:coche.marca_vehiculo,
+        
         modelo: coche.modelo_vehiculo,
+        nombre: `${coche.marca_vehiculo} ${coche.modelo_vehiculo}`, //coche.marcay_modelo_vehiculo,
        limiteKm: caracteristicas.maximodeKm,
         descripcion: caracteristicas.descripcion,
         ECO: caracteristicas.etiquetaECO === true,
