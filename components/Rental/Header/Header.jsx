@@ -5,7 +5,7 @@ import TextSide from "./TextSide"
 import { format, formatDistance, formatDuration } from "date-fns"
 import { es } from "date-fns/locale"
 
-import './header.css'
+import './Header.css'
 function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia, from, to }) {
 
     const images = {

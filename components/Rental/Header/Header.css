@@ -10,10 +10,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     gap: 1rem;
-    width: var(--width-image);
-    max-width: var(--width-image);
     height: auto;
-
 }
 
 .cuadro {
@@ -21,21 +18,13 @@
     color: white;
     flex: 1;
     aspect-ratio: 1/1;
-    min-width: calc(var(--width-image) / 8);
-}
 
-.holder {
-    aspect-ratio: 1/1;
 }
 
 @media (min-width: 1280px) {
     .hero {
         flex-direction: row;
         --width-image: 65vw;
-    }
-
-    .holder {
-        display: none;
     }
 
     .cuadros {
