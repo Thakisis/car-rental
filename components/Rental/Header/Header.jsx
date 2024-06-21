@@ -20,8 +20,8 @@ function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia,
         PHEV: { image: images.hibrido, text: "Híbrido Enchufable", value: "PHEV" },  // text es el tooltip=hover
         SHEV: { image: images.hibrido, text: "Híbrido Puro", value: "SHEV" },
     }
-    const fromComp = from ? format(parseInt(from), "d 'de' MMMM", { locale: es }) : "No seleccionado"
-    const days = from && to ? formatDistance(parseInt(from), parseInt(to), { locale: es }) : "No seleccionado"
+    const fromComp = from ? format(parseInt(from), "d 'de' MMMM", { locale: es }) : <> <span>sin</span> <span>fecha</span></>
+    const days = from && to ? formatDistance(parseInt(from), parseInt(to), { locale: es }) : <> <span>sin</span> <span>fecha</span></>
 
 
 
