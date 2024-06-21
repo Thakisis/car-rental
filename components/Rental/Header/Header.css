@@ -6,6 +6,16 @@
 }
 
 .cuadros {
+    display: inline-grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+
+
+}
+
+.test {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -18,6 +28,7 @@
     color: white;
     flex: 1;
     aspect-ratio: 1/1;
+    font-size: .8rem;
 
 }
 

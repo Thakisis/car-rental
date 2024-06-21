@@ -58,7 +58,7 @@ function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia,
                     <TextSide className="bg-blue-500">GUADALAJARA</TextSide>
                     <TextSide className="bg-yellow-500">{fromComp}</TextSide>
                     <TextSide className="bg-purple-500">{days}</TextSide>
-                    <div className="holder">a</div>
+
                 </div>
             </div>
 

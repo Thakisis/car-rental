@@ -1,8 +1,9 @@
 
 
 function Square({ children, className }) {
+    //min-w-[100px]
     return (
-        <div className={`  min-w-[100px] relative   cuadro justify-center items-center rounded-xl overflow-clip ${className} `} >
+        <div className={`   relative   cuadro justify-center items-center rounded-xl overflow-clip ${className} `} >
 
             {children}
 
