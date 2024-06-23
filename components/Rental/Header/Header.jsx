@@ -69,29 +69,3 @@ function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia,
 }
 
 export default Header
-
-/*
-
-
-        
-        <div className="flex flex-col  xl:flex-row justify-center items-stretch  mt-20 w-full  gap-4 bg-red-500">
-            <div className="flex flex-col  xl:flex-row justify-center items-center bg-blue-300">
-                <div className="relative inset-0 z-0 overflow-clip rounded-xl bg-black items-stretch" id="header ">
-                    <Image src={`/images/card/${image}`} alt="car" width={1024} height={660} className={carImageClassName} />
-
-
-                </div>
-
-                <div className="flex flex-col  flex-wrap gap-8  items-stretch">
-
-                    
-
-                </div>
-
-
-
-
-
-            </div>
-        </div>
-*/

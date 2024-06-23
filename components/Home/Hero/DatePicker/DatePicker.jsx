@@ -17,7 +17,8 @@ export function DatePickerHero() {
     return (
 
 
-        <div className="bg-white w-full h-full p-8 justify-center items-center  select-none" onMouseLeave={closeCalendar}>
+        <div className=" fixed inset-0 md:relative bg-white flex  flex-col justify-center  w-full h-full p-8  items-center  text-black select-none  rounded-xl" onMouseLeave={closeCalendar}>
+            <h1 className="text-3xl  font-light text-primary w-full pl-8 mb-8">Seleccione periodo de alquiler</h1>
             <Calendar
 
                 mode="range"

@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { purgeFilters } from './StoreHelpers'
-
+import {getCitiesDropOff} from '@/server/Queries/getCities'
 const useCarStore = create((set, get) => ({
     homeFilter: {
         tiposVehiculo: [],
@@ -11,12 +11,20 @@ const useCarStore = create((set, get) => ({
 
     },
     datesRental: { from: null, to: null },
+    citiesRental:{ciudad:null, dropoff:null},
+    listDropOff: [],
     isCalendar: false,
     cleanFilter: [],
     stripeData: null,
     dateVehicleDialog: false,
     Actions: {
-        setDateVehicle(isOpen){
+        async setCity({key, value}){
+            set(({citiesRental}) => ({citiesRental:{...citiesRental, [key]:value ?? null}}))
+            const destinos= await getCitiesDropOff(value)
+            set({listDropOff: destinos} )
+        },
+
+        openVehicleDialog(isOpen){
             set({dateVehicleDialog:isOpen})
         },
         async getClientSecret(price) {

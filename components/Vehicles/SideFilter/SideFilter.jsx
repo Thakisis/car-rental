@@ -9,7 +9,7 @@ export default function SideFilter(props) {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <Button variant="outline">Open</Button>
+                <Button >Cambiar Criterios de Busqueda</Button>
             </SheetTrigger>
             <SheetContent side="left">
                 <SheetHeader>

@@ -1,37 +1,47 @@
 
 import { es } from "date-fns/locale"
 import { Calendar } from "@/components/ui/calendar"
-import { useSearchParams } from "next/navigation"
+import { usePathname } from "next/navigation"
+import { useEffect } from "react"
 import useCarStore from "@/Store/Store"
-export function DatePickerVehicle() {
+import { useRouter } from "next/navigation"
 
-    const searchParams = useSearchParams()
+import { createQuery, createQueryUrl, decodeQuery } from "@/lib/queryParams"
 
-    const datesRental = {
-        from: parseInt(params.get("from")), from: parseInt(params.get("to"))
-    }
+export function DatePickerVehicle(params) {
 
-
+    const dates = useCarStore(state => state.datesRental)
     const setDatesRental = useCarStore(state => state.Actions.setDatesRental)
+    /* eslint-disable */
+    useEffect(() => {
+
+        if (!params.from || !params.to || dates) return
+        const datesRental = { from: params.from ? new Date(parseInt(params.from)) : null, to: params.to ? new Date(parseInt(params.to)) : null }
+
+        setDatesRental(datesRental)
+    }, [])
+    /* eslint-disable */
+
+    const router = useRouter()
+    const pathname = usePathname()
+
 
     const isSmallScreen = window.innerWidth < 960 ? true : false
 
-    const closeCalendar = () => {
-        if ((datesRental?.from && datesRental?.to))
-            setIsCalendar(false)
-    }
-    const changeDates = (dates) => {
-        const newParams = new URLSearchParams(searchParams)
-        object.keys(dates).forEach(key => {
-            newParams.set(key, dates[key])
-        })
-        if (term) {
-            params.set('query', term)
-        } else {
-            params.delete('query')
-        }
+    const changeDates = (newDates) => {
 
-        setDatesRental(dates)
+        setDatesRental(newDates)
+
+        const newParams = { ...params }
+        newParams.from = newDates?.from?.getTime()
+        newParams.to = newDates?.to?.getTime()
+
+        const url = createQueryUrl(newParams)
+
+        console.log(url)
+        router.replace(`${pathname}?${url}`)
+
+
 
     }
     return (
@@ -42,7 +52,7 @@ export function DatePickerVehicle() {
 
                 mode="range"
                 locale={es}
-                selected={datesRental}
+                selected={dates}
                 onSelect={changeDates}
                 numberOfMonths={isSmallScreen ? 1 : 2}
                 disabled={(current) => current < new Date()}
