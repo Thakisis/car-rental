@@ -9,7 +9,7 @@ import InfoEngine from './InfoEngine'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
-export default async function Card({ datesRental, ...props }) {
+export default async function Card({ citiesRental, datesRental, ...props }) {
 
     const newData = transformdata(props)
     const { nombre, image, tipo } = newData
@@ -21,7 +21,7 @@ export default async function Card({ datesRental, ...props }) {
         return (<div key={value} data-content={content} className={`flex-1 p-2 pl-2 transition-all	${selected === value ? "bg-slate-300" : "bg-slate-200"} `} ><Icono selected={selected === value} {...props} className="w-6 h-6 text-black transition-all pointer-events-none" /></div>)
     })
     const urlCar = {
-        pathname: `/alquiler/${newData.id}`, query: datesRental
+        pathname: `/alquiler/${newData.id}`, query: { ...datesRental, ...citiesRental }
     }
     const isDisabled = false
     return (

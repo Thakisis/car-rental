@@ -337,10 +337,10 @@ const MultipleSelector = React.forwardRef(
                                     data-fixed={option.fixed}
                                     data-disabled={disabled || undefined}
                                 >
-                                    {option.label}
+
                                     <button
                                         className={cn(
-                                            "ml-1 rounded-full  outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2",
+                                            "flex justify-center items-center rounded-full  outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2",
                                             (disabled || option.fixed) && "hidden"
                                         )}
                                         onKeyDown={e => {
@@ -354,8 +354,8 @@ const MultipleSelector = React.forwardRef(
                                         }}
                                         onClick={() => handleUnselect(option)}
                                     >
-
-                                        <X className="h-3 w-3 text-primary-foreground hover:text-foreground" />
+                                        {option.label}
+                                        <X className="ml-2 h-3 w-3 text-primary-foreground hover:text-foreground" />
                                     </button>
                                 </Badge>
                             )

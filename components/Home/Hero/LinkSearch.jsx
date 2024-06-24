@@ -9,7 +9,9 @@ import Link from "next/link"
 function LinkSearch(props) {
     const cleanFilter = useCarStore(state => state.homeFilter)
     const dates = useCarStore(state => state.datesRental)
-    const query = createQuery({ ...cleanFilter, from: dates?.from?.getTime(), to: dates?.to?.getTime() })
+    const cities = useCarStore(state => state.citiesRental)
+    const citiesQuery = cities.ciudad === cities.dropoff ? { ciudad: cities.ciudad } : cities
+    const query = createQuery({ ...cleanFilter, from: dates?.from?.getTime(), to: dates?.to?.getTime(), ...citiesQuery })
     const urlString = createQueryUrl(query)
 
     return (

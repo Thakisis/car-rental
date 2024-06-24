@@ -6,7 +6,7 @@ import { format, formatDistance, formatDuration } from "date-fns"
 import { es } from "date-fns/locale"
 
 import './Header.css'
-function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia, from, to }) {
+function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia, from, to, ciudad, dropoff }) {
 
     const images = {
         fuel: '/images/Fuel.webp',
@@ -22,7 +22,7 @@ function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia,
     }
     const fromComp = from ? format(parseInt(from), "d 'de' MMMM", { locale: es }) : <> <span>sin</span> <span>fecha</span></>
     const days = from && to ? formatDistance(parseInt(from), parseInt(to), { locale: es }) : <> <span>sin</span> <span>fecha</span></>
-
+    const cityComponent = ciudad === dropoff ? <span>{ciudad}</span> : <><span>{ciudad}</span> <span>-</span> <span>{dropoff}</span></>
 
 
     const imageCambio = cajaCambios === "Manual" ? '/images/ManualGear.webp' : '/images/AutomaticGear.webp'
@@ -38,11 +38,11 @@ function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia,
                     <Image src={`/images/card2/${image}`} alt="car" width={1024} height={660} className={`absolute inset-0 z-10 w-full h-full `} />
 
                     <div className="flex absolute inset-0 pl-6 items-end justify-end z-10 color-white ">
-                        <span className=" text-xl md:text-5xl lg:text-[4rem] w-[200rem] text-white font-bold ">{modelo.toUpperCase()}</span>
+                        <span className=" text-xl md:text-5xl lg:text-[4rem] w-[200rem] text-white font-bold capitalize">{modelo}</span>
                     </div>
 
                 </div>
-                <div className="cuadros flex-wrap">
+                <div className="cuadros flex-wrap  capitalize">
                     <ImageSide image={imageCambio} alt="car" texto="Caja de cambios" >
                         <span className="text-center hidden xl:flex">Caja de Cambios</span>
                         <span className="text-center flex xl:hidden">Cambio</span>
@@ -55,7 +55,11 @@ function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia,
                         <span>Autonomia</span>
                         <span>{autonomia} km</span>
                     </ImageSide>
-                    <TextSide className="bg-blue-500">GUADALAJARA</TextSide>
+                    <TextSide className="bg-blue-500 ">
+                        <div className="flex flex-col justify-center items-center">
+                            {ciudad ? cityComponent : "Seleccione Origen"}
+                        </div>
+                    </TextSide>
                     <TextSide className="bg-yellow-500">{fromComp}</TextSide>
                     <TextSide className="bg-purple-500">{days}</TextSide>
 

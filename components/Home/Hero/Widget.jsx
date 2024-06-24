@@ -3,7 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Separator } from "@/components/ui/separator"
 import Toggles from "./Toggles"
 import LinkSearch from "./LinkSearch"
-import MarcasInput from "./MarcasInput"
+import MarcasInput from "@/components/MarcasInput/"
 import DateButton from "./DatePicker/DateButton"
 import CityPicker from "@/components/Citypicker"
 const Widget = () => {

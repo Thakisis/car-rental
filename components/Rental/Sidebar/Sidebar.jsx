@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { format, intervalToDuration } from "date-fns"
 import { es } from "date-fns/locale"
 
-function Sidebar({ from, to, ...data }) {
+function Sidebar({ ciudad, dropoff, from, to, ...data }) {
 
     const start = new Date(parseInt(from))
     const end = new Date(parseInt(to))
@@ -16,6 +16,13 @@ function Sidebar({ from, to, ...data }) {
             <h4 className="text-2xl font-light text-blue-800 ">Vehiculo</h4>
             <div className="ml-4">{data.nombre}</div>
             <div className="border border-gray-200 my-3"></div>
+
+            <h4 className="text-2xl font-light text-blue-800 ">Ciudad</h4>
+            <div className="ml-4">Recogida en {ciudad}</div>
+            {dropoff && dropoff !== ciudad && <div className="ml-4">Entrega en {dropoff}</div>}
+
+            <div className="border border-gray-200 my-3"></div>
+
             <h4 className="mt-4 text-2xl font-light text-blue-800">Periodo de Alquiler</h4>
             <div className="flex flex-col items-start ml-4">
                 <span className="font-bold">Fecha de recogida</span>
@@ -26,6 +33,7 @@ function Sidebar({ from, to, ...data }) {
                 <button className="text-gray-500 ml-4">{toComp}</button>
             </div>
             <div className="border border-gray-200 my-3"></div>
+
 
             <h4 className="mt-4 text-2xl font-light text-blue-800">Precio</h4>
             <div className="flex justify-between items-start ml-4">
@@ -42,12 +50,14 @@ function Sidebar({ from, to, ...data }) {
                 <span > {from && to ? ` ${days * parseFloat(data.precioDia)} €` : "-"} </span>
             </div>
 
-            <div className="pt-8 w-full ">
+            <div className="pt-8 w-full flex justify-between items-center">
                 <Button
-
-
                 >
-                    Proceed to Payment
+                    Proceder
+                </Button>
+                <Button
+                >
+                    Cambiar parametros
                 </Button>
 
             </div>
