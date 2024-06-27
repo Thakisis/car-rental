@@ -6,7 +6,7 @@ import { getCities } from "@/server/Queries/getCities"
 import CityComboOrigen from "./CityComboOrigen"
 import CityComboDestino from "./CityComboDestino"
 import AddDropoff from "./AddDropoff"
-async function CityPicker({ writeUrl, params }) {
+async function CityPicker({ writeUrl, params, children }) {
     const cities = await getCities()
     const ciudades = cities.map((city) => ({ value: city, label: city }))
 

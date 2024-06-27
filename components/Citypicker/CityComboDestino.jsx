@@ -15,9 +15,14 @@ function CityComboDestino({ writeUrl, params }) {
         setCity({ key: "dropoff", value: ciudad })
         if (!writeUrl) return
         const newParams = { ...params }
-        newParams.dropoff = ciudad
+        if (ciudad !== citiesRental.ciudad) {
+            newParams.dropoff = ciudad
+        }
+        else {
+            delete newParams.dropoff
+        }
         const url = createQueryUrl(newParams)
-        router.replace(`${pathName}?${url}`)
+        router.replace(`${pathName}?${url}`, { scroll: false })
     }
 
     const dropOffvalue = citiesRental.dropoff && ciudades.find(city => city.value === citiesRental.dropoff) ? citiesRental.dropoff : citiesRental.ciudad

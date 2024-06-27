@@ -1,5 +1,5 @@
 "use client"
-
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 function Back(props) {
         const router = useRouter();
@@ -8,7 +8,7 @@ function Back(props) {
         }
     return (
         <div>
-            <button onClick={goBack}>back</button>
+            <Button variant="outline" onClick={goBack}>Volver Atras</Button>
         </div>
     );
 }

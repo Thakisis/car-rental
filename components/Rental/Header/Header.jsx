@@ -22,25 +22,21 @@ function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia,
     }
     const fromComp = from ? format(parseInt(from), "d 'de' MMMM", { locale: es }) : <> <span>sin</span> <span>fecha</span></>
     const days = from && to ? formatDistance(parseInt(from), parseInt(to), { locale: es }) : <> <span>sin</span> <span>fecha</span></>
-    const cityComponent = ciudad === dropoff ? <span>{ciudad}</span> : <><span>{ciudad}</span> <span>-</span> <span>{dropoff}</span></>
+    const cityComponent = ciudad === dropoff || !dropoff ? <span>{ciudad}</span> : <><span>{ciudad}</span> <span>-</span> <span>{dropoff}</span></>
 
 
     const imageCambio = cajaCambios === "Manual" ? '/images/ManualGear.webp' : '/images/AutomaticGear.webp'
     return (
 
         <div className="flex w-full justify-center items-center ">
-
             <div className="hero">
                 <div className="relative *:flex  bg-black car rounded-xl overflow-hidden p-0 ">
                     <Image src={`/images/card/${image}`} alt="car" width={1024} height={660} className="w-full h-full " />
-
                     <Brand brand={marca} />
                     <Image src={`/images/card2/${image}`} alt="car" width={1024} height={660} className={`absolute inset-0 z-10 w-full h-full `} />
-
-                    <div className="flex absolute inset-0 pl-6 items-end justify-end z-10 color-white ">
+                    <div className="flex absolute inset-0 pl-8 items-end justify-end z-10 color-white pb-4">
                         <span className=" text-xl md:text-5xl lg:text-[4rem] w-[200rem] text-white font-bold capitalize">{modelo}</span>
                     </div>
-
                 </div>
                 <div className="cuadros flex-wrap  capitalize">
                     <ImageSide image={imageCambio} alt="car" texto="Caja de cambios" >
@@ -65,8 +61,6 @@ function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia,
 
                 </div>
             </div>
-
-
         </div>
     )
 

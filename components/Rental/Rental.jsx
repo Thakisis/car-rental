@@ -21,7 +21,7 @@ async function Rental({ carId, searchParams }) {
 
                 <aside className="w-full md:w-1/4 flex flex-col items-center px-3">
 
-                    <Sidebar {...data} {...searchParams} />
+                    <Sidebar carId={carId} {...data} {...searchParams} />
                 </aside>
             </div>
 

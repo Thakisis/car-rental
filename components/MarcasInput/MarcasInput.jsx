@@ -20,20 +20,15 @@ const OPTIONS = [
 const MarcasSideBar = ({ writeUrl, ...params }) => {
     const brands = useCarStore(state => state.homeFilter.brands)
     const setHomeFilter = useCarStore(state => state.Actions.setHomeFilter)
-
     const router = useRouter()
     const pathName = usePathname()
-    const setCiudad = (ciudad) => {
-        setCity({ key: "ciudad", value: ciudad })
-    }
     /* eslint-disable */
     useEffect(() => {
-        console.log(params, brands)
+
         if (!params.brands || brands) return
         setHomeFilter({ brands: params.brands })
     }, [])
     const changeHandler = (selected) => {
-
         const brands = selected.map(item => item.label)
         setHomeFilter({ brands: brands })
         if (!writeUrl) return
@@ -44,7 +39,6 @@ const MarcasSideBar = ({ writeUrl, ...params }) => {
 
     }
     const valueSel = brands?.map(item => ({ label: item, value: item.toLowerCase() }))
-
     return (
         <>
 
@@ -62,7 +56,6 @@ const MarcasSideBar = ({ writeUrl, ...params }) => {
                 }
             />
         </>
-
     )
 }
 

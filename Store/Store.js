@@ -20,8 +20,12 @@ const useCarStore = create((set, get) => ({
     Actions: {
         async setCity({key, value}){
             set(({citiesRental}) => ({citiesRental:{...citiesRental, [key]:value ?? null}}))
-            const destinos= await getCitiesDropOff(value)
-            set({listDropOff: destinos} )
+            if(key === "ciudad"){
+            
+                const destinos= await getCitiesDropOff(value)
+                set({listDropOff: destinos} )
+            }
+            
         },
 
         openVehicleDialog(isOpen){
@@ -41,9 +45,13 @@ const useCarStore = create((set, get) => ({
         },
         switchChecker(field, value, isChecked) {
             const fields = ['tiposVehiculo', 'tiposElectrico']
+            console.log(field, value, isChecked)
             if (fields.includes(field)) {
+                console.log("entro")
                 const filtro = get().homeFilter[field]
-                const newFiltro = isChecked ? [...filtro, value] : filtro.filter(item => item !== value)
+                
+                const newFiltro = isChecked && !filtro.includes(value) ? [...filtro, value] : filtro.filter(item => item !== value)
+                console.log(newFiltro)
                 set({ homeFilter: { ...get().homeFilter, [field]: newFiltro } })
             }
         },

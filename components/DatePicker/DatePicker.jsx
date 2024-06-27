@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation"
 
 import { createQuery, createQueryUrl, decodeQuery } from "@/lib/queryParams"
 
-export function DatePickerVehicle(params) {
+export default function DatePicker(params) {
 
     const dates = useCarStore(state => state.datesRental)
     const setDatesRental = useCarStore(state => state.Actions.setDatesRental)
@@ -38,8 +38,8 @@ export function DatePickerVehicle(params) {
 
         const url = createQueryUrl(newParams)
 
-        console.log(url)
-        router.replace(`${pathname}?${url}`)
+
+        router.replace(`${pathname}?${url}`, { scroll: false })
 
 
 

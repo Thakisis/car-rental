@@ -11,11 +11,9 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { useSearchParams } from "next/navigation"
-import { DatePickerVehicle } from './DatePickerVehicle'
-function DateDialog(params) {
 
-
+import DatePicker from '@/components/DatePicker'
+function ParamsDialog(params) {
     const isDates = params.from || params.top
     const dateVehicleDialog = useRentalStore(state => state.dateVehicleDialog)
     const openVehicleDialog = useRentalStore(state => state.Actions.openVehicleDialog)
@@ -24,7 +22,6 @@ function DateDialog(params) {
     const { from, to } = params
     const fromComp = from ? format(parseInt(from), "d 'de' MMMM", { locale: es }) : "sin fecha"
     const days = from && to ? formatDistance(parseInt(from), parseInt(to), { locale: es }) : "sin fecha"
-
     return (
         <>
             <Button onClick={openDialog} variant={isDates ? "default" : "outline"}>{isDates ? `${fromComp} - ${days}` : "Seleccionar Periodo de Alquiler"}</Button>
@@ -36,9 +33,9 @@ function DateDialog(params) {
 
                     <DialogHeader>
                         <DialogTitle>Seleccione periodo de alquiler</DialogTitle>
-
                     </DialogHeader>
-                    <DatePickerVehicle {...params} />
+                    <DatePicker {...params} />
+
                     <DialogFooter>
                         <Button onClick={closeDialog}>Confirmar Fechas</Button>
                     </DialogFooter>
@@ -49,6 +46,6 @@ function DateDialog(params) {
     )
 }
 
-export default DateDialog
+export default ParamsDialog
 
 
