@@ -16,13 +16,13 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs"
 
-function TabsDemo() {
+function Steps() {
     return (
-        <Tabs defaultValue="account" className="">
+        <Tabs value="datos" className="">
             <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="datos">Datos </TabsTrigger>
-                <TabsTrigger value="pago">Pago</TabsTrigger>
-                <TabsTrigger value="confirmacion">confirmacion</TabsTrigger>
+                <TabsTrigger value="datos"><div>Datos</div></TabsTrigger>
+                <TabsTrigger value="pago"><div>Pago</div></TabsTrigger>
+                <TabsTrigger value="confirmacion"><div>Completado</div></TabsTrigger>
             </TabsList>
             <TabsContent value="datos">
                 uno
@@ -36,4 +36,4 @@ function TabsDemo() {
         </Tabs>
     )
 }
-export default TabsDemo
+export default Steps

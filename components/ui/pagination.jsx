@@ -20,7 +20,7 @@ Pagination.displayName = "Pagination"
 const PaginationContent = React.forwardRef(({ className, ...props }, ref) => (
   <ul
     ref={ref}
-    className={cn("flex flex-row items-center gap-1", className)}
+    className={cn("flex flex-row items-center gap-0 md:gap-1", className)}
     {...props} />
 ))
 PaginationContent.displayName = "PaginationContent"
@@ -55,13 +55,14 @@ const PaginationPrevious = ({
     size="default"
 
     className={cn(
-      "gap-1 pl-2.5",
+      "",
       className,
       disabled ? ["pointer-events-none opacity-50"] : [],
     )}
     {...props}>
     <ChevronLeft className="h-4 w-4" />
-    <span>Anterior</span>
+
+    <span className=" pl-2 hidden  md:block">Anterior</span>
   </PaginationLink>
 )
 PaginationPrevious.displayName = "PaginationPrevious"
@@ -74,12 +75,12 @@ const PaginationNext = ({
     aria-label="Ir a siguiente página"
     size="default"
     className={cn(
-      "gap-1 pl-2.5",
+      "",
       className,
       disabled ? ["pointer-events-none opacity-50"] : [],
     )}
     {...props}>
-    <span>Siguiente</span>
+    <span className=" hidden   pr-2 hidden  md:block">Siguiente</span>
     <ChevronRight className="h-4 w-4" />
   </PaginationLink>
 )

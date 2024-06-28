@@ -26,12 +26,8 @@ export default function SideFilter({ params }) {
                     <MarcasInput {...params} writeUrl />
 
                 </div>
-                <SheetFooter>
-                    <SheetClose asChild>
 
-                    </SheetClose>
-                </SheetFooter>
-            </SheetContent>.
+            </SheetContent>
         </Sheet>
     )
 }

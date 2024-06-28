@@ -1,7 +1,9 @@
 import { create } from 'zustand'
 import { purgeFilters } from './StoreHelpers'
 import {getCitiesDropOff} from '@/server/Queries/getCities'
-const useCarStore = create((set, get) => ({
+import { devtools } from 'zustand/middleware'
+
+const useCarStore = create(devtools((set, get) => ({
     homeFilter: {
         tiposVehiculo: [],
         tiposElectrico: [],
@@ -65,7 +67,7 @@ const useCarStore = create((set, get) => ({
             set({ datesRental: dates })
         }
     }
-}))
+})))
 
 export default useCarStore
 

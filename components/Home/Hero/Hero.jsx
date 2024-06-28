@@ -4,7 +4,7 @@ import Widget from "./Widget"
 import HeroRight from "./HeroRight"
 export function Hero(props) {
     return (
-        <div className=" relative flex items-center w-full  min-h-screen pt-24    ">
+        <div className=" relative flex items-center w-full  min-h-screen    ">
             <div className="absolute inset-0 ">
                 <Image src={bgHero} alt="fotografia vehiculos" className="object-cover object-left-bottom h-full w-full" />
             </div>
