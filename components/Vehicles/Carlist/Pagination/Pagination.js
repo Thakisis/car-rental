@@ -57,7 +57,7 @@ function Pagina({ page, isActive, params, as, disabled }) {
   return (
 
     <PaginationItem >
-      <Component disabled={disabled} className="select-none" href={`/vehiculos?${queryUrl}`} isActive={!as && isActive}>{page}</Component>
+      <Component disabled={disabled} className="select-none" href={`/vehiculos?${queryUrl}`} scroll={false} isActive={!as && isActive}>{page}</Component>
     </PaginationItem>
   )
 }
