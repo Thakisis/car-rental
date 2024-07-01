@@ -1,17 +1,19 @@
 import { promises as fs } from 'fs';
 import { filtercarType } from "./filters"
 import { transformdata } from "./TransformData"
-
+import path from 'path'
 
 export async function getVehicles(params, page = 1) {
     //await sleep(3000)
     const pageSize = 5
-
-    const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
-    if (!response.ok) {
-        return { codeError: response.status }
-    }
-    const data = await response.json()
+    const realFilepath = path.join(process.cwd(), 'public', "vehiculos.json")
+    const file= fs.readFile(realFilepath,'utf8')
+        //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
+        //if (!response.ok) {
+            //return { codeError: response.status }
+        //}
+        const data=JSON.parse(file)
+    //const data = await response.json()
     const addCars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) =>
         data.vehiculos.map((car) => (
             { ...car, id: i*10+parseInt(car.id) , marca_vehiculo: `${car.marca_vehiculo}-${i}` }
@@ -24,9 +26,14 @@ export async function getVehicles(params, page = 1) {
 }
 
 export async function getDataFilters() {
-    const file = await fs.readFile(process.cwd() + '/app/vehiculos.json', 'utf8');
-    const data = JSON.parse(file);
-    console.log(data)
+    const realFilepath = path.join(process.cwd(), 'public', "vehiculos.json")
+    const file= fs.readFile(realFilepath,'utf8')
+        //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
+        //if (!response.ok) {
+            //return { codeError: response.status }
+        //}
+        const data=JSON.parse(file)
+        
     //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
     //if (!response.ok) {
         //return { codeError: response.status }

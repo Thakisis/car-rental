@@ -1,10 +1,18 @@
-import { promises as fs } from 'fs';
+import path from 'path'
 
 
 export async function getCities() {
     //await sleep(3000)
-    const file = await fs.readFile(process.cwd() + '/app/ciudades.json', 'utf8');
-    const data = JSON.parse(file);
+
+    const realFilepath = path.join(process.cwd(), 'public', "ciudades.json")
+    const file= fs.readFile(realFilepath,'utf8')
+        //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
+        //if (!response.ok) {
+            //return { codeError: response.status }
+        //}
+   
+        const data=JSON.parse(file)
+      
     //const response = await fetch(`http://localhost/ciudades.json` )
     //if (!response.ok) {
     //    return { codeError: response.status }
@@ -15,7 +23,8 @@ export async function getCities() {
 }
 export async function getCitiesDropOff(origen) {
     //await sleep(3000)
-    const file = await fs.readFile(process.cwd() + '/app/ciudades.json', 'utf8');
+    const realFilepath = path.join(process.cwd(), 'public', "ciudades.json")
+    const file= fs.readFile(realFilepath,'utf8')
     const data = JSON.parse(file);
     //const response = await fetch(`https://carefast.vercel.app/ciudades.json`)
     //if (!response.ok) {
