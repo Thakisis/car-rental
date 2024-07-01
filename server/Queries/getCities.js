@@ -1,3 +1,6 @@
+import { promises as fs } from 'fs';
+
+
 export async function getCities() {
     //await sleep(3000)
     const file = await fs.readFile(process.cwd() + '/app/ciudades.json', 'utf8');
