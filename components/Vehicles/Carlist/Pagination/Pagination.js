@@ -38,15 +38,6 @@ function createPagination(page, total) {
   if (page >= total - 3) return [1, -1,total-4, total - 3, total - 2, total - 1, total]
   return [1, -1, page - 1, ,page, page + 1, -2,  total]
 }
-function createPagination2(page, total) {
-  if (total <= 6) return Array.from({ length: total }, (_, i) => i + 1)
-  if (page <= 3) return [1, 2, 3, ...(page === 3 ? [4, -1, total] : [-1, total])]
-  if (page < total - 2) return [1, -1, page - 1, page, page + 1, -2, total]
-  if (page === total - 2) return [1, -1, total - 3, total - 2, total - 1, total]
-  return [1, -1, total - 2, total - 1, total]
-}
-
-
 
 function Pagina({ page, isActive, params, as, disabled }) {
   if (page < 0) return <PaginationEllipsis />
