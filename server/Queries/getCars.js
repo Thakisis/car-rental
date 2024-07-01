@@ -7,7 +7,7 @@ export async function getVehicles(params, page = 1) {
     //await sleep(3000)
     const pageSize = 5
     const realFilepath = path.join(process.cwd(), 'public', "vehiculos.json")
-    const file= fs.readFile(realFilepath,'utf8')
+    const file= await fs.readFile(realFilepath,'utf8')
         //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
         //if (!response.ok) {
             //return { codeError: response.status }
@@ -26,8 +26,8 @@ export async function getVehicles(params, page = 1) {
 }
 
 export async function getDataFilters() {
-    const realFilepath = path.join(process.cwd(), 'public', "vehiculos.json")
-    const file= fs.readFile(realFilepath,'utf8')
+        const realFilepath = path.join(process.cwd(), 'public', "vehiculos.json")
+        const file= await fs.readFile(realFilepath,'utf8')
         //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
         //if (!response.ok) {
             //return { codeError: response.status }

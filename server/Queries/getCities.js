@@ -5,8 +5,8 @@ import path from 'path'
 export async function getCities() {
     //await sleep(3000)
 
-    const realFilepath = path.join(process.cwd(), 'public', "ciudades.json")
-    const file= fs.readFile(realFilepath,'utf8')
+    const realFilepath =await path.join(process.cwd(), 'public', "ciudades.json")
+    const file= await fs.readFile(realFilepath,'utf8')
         //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
         //if (!response.ok) {
             //return { codeError: response.status }
