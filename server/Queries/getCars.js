@@ -62,13 +62,17 @@ export async function getVehicle(id) {
     //const data = await response.json()
 
     // falsear el id
-    const file = await fs.readFile(process.cwd() + '/app/vehiculos.json', 'utf8');
-    const data = JSON.parse(file);
+    const realFilepath = path.join(process.cwd(), 'public', "vehiculos.json")
+    const file= await fs.readFile(realFilepath,'utf8')
+        //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
+        //if (!response.ok) {
+            //return { codeError: response.status }
+        //}
+    const data=JSON.parse(file)
     const idCar=parseInt(id)%10
-    
     const vehiculo=transformdata(data.vehiculos.find(car => parseInt(car.id) === idCar))
     
-    //console.log(vehiculo)
+    
     
     return vehiculo
 
