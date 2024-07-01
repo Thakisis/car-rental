@@ -1,0 +1,479 @@
+{
+    "vehiculos": [
+        {
+            "id": "5",
+            "alquilable": "S",
+            "caracteristicas": [
+                {
+                    "autonomiaKm": 181,
+                    "año": 2024,
+                    "cajaCambio": "Automatico",
+                    "descripcion": "Vehiculo muy cómodo, rápido y veloz",
+                    "etiquetaECO": true,
+                    "litros": 591,
+                    "maximodeKm": 90,
+                    "numeroBolsasmaletero": 6,
+                    "numPlazas": 7,
+                    "tipoVehiculo": "SHEV",
+                    "altoConfort": true,
+                    "altasPrestaciones": true,
+                    "perfectoEstado": true
+                }
+            ],
+            "ciudades_vehiculo": [
+                "Santa Coloma de Gramenet",
+                "Torrelavega"
+            ],
+            "extras": [
+                {
+                    "gps": false,
+                    "sillaBebe": true,
+                    "proteccionenCarretera": false,
+                    "exenciondeFranquicia": 74,
+                    "opcionSeguroTodoRiesgo": false
+                }
+            ],
+            "fecha_fin": "10-09-2024T20:00",
+            "fecha_ini": "10-08-2024T07:00",
+            "geo_oficina": {
+                "coordinates": {
+                    "lat": 42.0095,
+                    "lon": -4.5288
+                }
+            },
+            "imagen_url": "Default_Ford_Fusion_Hybrid_0.webp",
+            "marca_vehiculo": "Ford",
+            "modelo_vehiculo": "Mustang Mach-E",
+            "marcay_modelo_vehiculo": "Ford Mustang Mach-E",
+            "precio": [
+                {
+                    "por1DiaEuros": 69,
+                    "cancelacionGratis": false,
+                    "ofertaEspecial": false,
+                    "precioOferta": 46
+                }
+            ],
+            "tipo_vehiculo": "Coche",
+            "seguro": [
+                {
+                    "CoberturaParcialcolisionFranquiciaQty": 1000,
+                    "CoberturaParcialcolisionFranquicia": true,
+                    "CoberturaRobo": true,
+                    "CoberturaRobocolisionFranquiciaQty": 1000
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "alquilable": "S",
+            "caracteristicas": [
+                {
+                    "autonomiaKm": 550,
+                    "año": 2023,
+                    "cajaCambio": "Manual",
+                    "descripcion": "Vehiculo muy cómodo, rápido y veloz",
+                    "etiquetaECO": true,
+                    "litros": 886,
+                    "maximodeKm": 80,
+                    "numeroBolsasmaletero": 0,
+                    "numPlazas": 1,
+                    "tipoVehiculo": "MHEV",
+                    "altoConfort": true,
+                    "altasPrestaciones": false,
+                    "perfectoEstado": true
+                }
+            ],
+            "ciudades_vehiculo": [
+                "Ciudad Real",
+                "Torrelavega"
+            ],
+            "extras": [
+                {
+                    "gps": false,
+                    "sillaBebe": false,
+                    "proteccionenCarretera": true,
+                    "exenciondeFranquicia": 63,
+                    "opcionSeguroTodoRiesgo": false
+                }
+            ],
+            "fecha_fin": "10-09-2024T20:00",
+            "fecha_ini": "10-08-2024T07:00",
+            "geo_oficina": {
+                "coordinates": {
+                    "lat": 40.6333,
+                    "lon": -3.1669
+                }
+            },
+            "imagen_url": "Default_Honda_PCX_Electric_0.webp",
+            "marca_vehiculo": "Honda",
+            "modelo_vehiculo": "PCX Electric",
+            "marcay_modelo_vehiculo": "Honda PCX Electric",
+            "precio": [
+                {
+                    "por1DiaEuros": 98,
+                    "cancelacionGratis": true,
+                    "ofertaEspecial": false,
+                    "precioOferta": 39
+                }
+            ],
+            "tipo_vehiculo": "Moto",
+            "seguro": [
+                {
+                    "CoberturaParcialcolisionFranquiciaQty": 1000,
+                    "CoberturaParcialcolisionFranquicia": true,
+                    "CoberturaRobo": true,
+                    "CoberturaRobocolisionFranquiciaQty": 1000
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "alquilable": "S",
+            "caracteristicas": [
+                {
+                    "autonomiaKm": 249,
+                    "año": 2022,
+                    "cajaCambio": "Manual",
+                    "descripcion": "Vehiculo muy cómodo, rápido y veloz",
+                    "etiquetaECO": false,
+                    "litros": 912,
+                    "maximodeKm": 300,
+                    "numeroBolsasmaletero": 0,
+                    "numPlazas": 1,
+                    "tipoVehiculo": "PHEV",
+                    "altoConfort": true,
+                    "altasPrestaciones": true,
+                    "perfectoEstado": false
+                }
+            ],
+            "ciudades_vehiculo": [
+                "Valladolid",
+                "Palencia"
+            ],
+            "extras": [
+                {
+                    "gps": false,
+                    "sillaBebe": true,
+                    "proteccionenCarretera": true,
+                    "exenciondeFranquicia": 56,
+                    "opcionSeguroTodoRiesgo": true
+                }
+            ],
+            "fecha_fin": "10-09-2024T20:00",
+            "fecha_ini": "10-08-2024T07:00",
+            "geo_oficina": {
+                "coordinates": {
+                    "lat": 43.5322,
+                    "lon": -5.6611
+                }
+            },
+            "imagen_url": "Default_Zero_SRF_0.webp",
+            "marca_vehiculo": "Zero",
+            "modelo_vehiculo": "SR/F",
+            "marcay_modelo_vehiculo": "Zero SR/F",
+            "precio": [
+                {
+                    "por1DiaEuros": 193,
+                    "cancelacionGratis": true,
+                    "ofertaEspecial": true,
+                    "precioOferta": 54
+                }
+            ],
+            "tipo_vehiculo": "Moto",
+            "seguro": [
+                {
+                    "CoberturaParcialcolisionFranquiciaQty": 1000,
+                    "CoberturaParcialcolisionFranquicia": true,
+                    "CoberturaRobo": true,
+                    "CoberturaRobocolisionFranquiciaQty": 1000
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "alquilable": "S",
+            "caracteristicas": [
+                {
+                    "autonomiaKm": 601,
+                    "año": 2022,
+                    "cajaCambio": "Manual",
+                    "descripcion": "Vehiculo muy cómodo, rápido y veloz",
+                    "etiquetaECO": false,
+                    "litros": 503,
+                    "maximodeKm": 11752186574,
+                    "numeroBolsasmaletero": 0,
+                    "numPlazas": 2,
+                    "tipoVehiculo": "PHEV",
+                    "altoConfort": true,
+                    "altasPrestaciones": false,
+                    "perfectoEstado": false
+                }
+            ],
+            "ciudades_vehiculo": [
+                "Sabadell",
+                "Salamanca"
+            ],
+            "extras": [
+                {
+                    "gps": false,
+                    "sillaBebe": false,
+                    "proteccionenCarretera": false,
+                    "exenciondeFranquicia": 134,
+                    "opcionSeguroTodoRiesgo": true
+                }
+            ],
+            "fecha_fin": "10-09-2024T20:00",
+            "fecha_ini": "10-08-2024T07:00",
+            "geo_oficina": {
+                "coordinates": {
+                    "lat": 40.9429,
+                    "lon": -4.1088
+                }
+            },
+            "imagen_url": "Default_HarleyDavidson_LiveWire_0.webp",
+            "marca_vehiculo": "Harley-Davidson",
+            "modelo_vehiculo": "LiveWire",
+            "marcay_modelo_vehiculo": "Harley-Davidson LiveWire",
+            "precio": [
+                {
+                    "por1DiaEuros": 129,
+                    "cancelacionGratis": false,
+                    "ofertaEspecial": false,
+                    "precioOferta": 42
+                }
+            ],
+            "tipo_vehiculo": "Moto",
+            "seguro": [
+                {
+                    "CoberturaParcialcolisionFranquiciaQty": 1000,
+                    "CoberturaParcialcolisionFranquicia": false,
+                    "CoberturaRobo": true,
+                    "CoberturaRobocolisionFranquiciaQty": 1000
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "alquilable": "S",
+            "caracteristicas": [
+                {
+                    "autonomiaKm": 557,
+                    "año": 2022,
+                    "cajaCambio": "Manual",
+                    "descripcion": "Vehiculo muy cómodo, rápido y veloz",
+                    "etiquetaECO": false,
+                    "litros": 726,
+                    "maximodeKm": 11138303047,
+                    "numeroBolsasmaletero": 0,
+                    "numPlazas": 1,
+                    "tipoVehiculo": "PHEV",
+                    "altoConfort": true,
+                    "altasPrestaciones": false,
+                    "perfectoEstado": true
+                }
+            ],
+            "ciudades_vehiculo": [
+                "Tarragona",
+                "Santa Cruz de Tenerife"
+            ],
+            "extras": [
+                {
+                    "gps": false,
+                    "sillaBebe": true,
+                    "proteccionenCarretera": false,
+                    "exenciondeFranquicia": 146,
+                    "opcionSeguroTodoRiesgo": true
+                }
+            ],
+            "fecha_fin": "10-09-2024T20:00",
+            "fecha_ini": "10-08-2024T07:00",
+            "geo_oficina": {
+                "coordinates": {
+                    "lat": 39.4699,
+                    "lon": -0.3763
+                }
+            },
+            "imagen_url": "Default_Vespa_Elettrica_0.webp",
+            "marca_vehiculo": "Vespa",
+            "modelo_vehiculo": "Elettrica",
+            "marcay_modelo_vehiculo": "Vespa Elettrica",
+            "precio": [
+                {
+                    "por1DiaEuros": 78,
+                    "cancelacionGratis": false,
+                    "ofertaEspecial": false,
+                    "precioOferta": 52
+                }
+            ],
+            "tipo_vehiculo": "Moto",
+            "seguro": [
+                {
+                    "CoberturaParcialcolisionFranquiciaQty": 1000,
+                    "CoberturaParcialcolisionFranquicia": true,
+                    "CoberturaRobo": true,
+                    "CoberturaRobocolisionFranquiciaQty": 1000
+                }
+            ]
+        }
+    ],
+    "aggs": {
+        "aggregates": [
+            {
+                "cajaCambio": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 4,
+                        "valor": "Manual"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "Automatico"
+                    }
+                ]
+            },
+            {
+                "tiposElectrico": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 3,
+                        "valor": "PHEV",
+                        "valorHumano": "Híbrido Enchufable"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "MHEV",
+                        "valorHumano": "Híbrido Ligero"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "SHEV",
+                        "valorHumano": "Híbrido Puro"
+                    },
+                    {
+                        "valorHumano": "100% Eléctrico",
+                        "valor": "BEV",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    },
+                    {
+                        "valorHumano": "Híbrido No Enchufable",
+                        "valor": "HEV",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    }
+                ]
+            },
+            {
+                "tiposVehiculo": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 4,
+                        "valor": "Moto"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "Coche"
+                    }
+                ]
+            },
+            {
+                "marcasVehiculo": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "Ford"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "Harley-Davidson"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "Honda"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "Vespa"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "Zero"
+                    },
+                    {
+                        "valor": "BMW",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    },
+                    {
+                        "valor": "Tesla",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    },
+                    {
+                        "valor": "Chevrolet",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    },
+                    {
+                        "valor": "Nissan",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    }
+                ]
+            },
+            {
+                "maximoDeKms": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 2,
+                        "valor": "Limitado"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 3,
+                        "valor": "Ilimitado"
+                    }
+                ]
+            },
+            {
+                "maximoNumPlazas": [
+                    {
+                        "disponible": true,
+                        "numVehiculos": 3,
+                        "valor": "1"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "2"
+                    },
+                    {
+                        "disponible": true,
+                        "numVehiculos": 1,
+                        "valor": "7"
+                    },
+                    {
+                        "valor": "5",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    },
+                    {
+                        "valor": "6",
+                        "numVehiculos": 0,
+                        "disponible": false
+                    }
+                ]
+            }
+        ]
+    },
+    "totalHits": 5.0,
+    "totalPages": 1.0
+}

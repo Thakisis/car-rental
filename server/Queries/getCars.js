@@ -26,6 +26,7 @@ export async function getVehicles(params, page = 1) {
 export async function getDataFilters() {
     const file = await fs.readFile(process.cwd() + '/app/vehiculos.json', 'utf8');
     const data = JSON.parse(file);
+    console.log(data)
     //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
     //if (!response.ok) {
         //return { codeError: response.status }
