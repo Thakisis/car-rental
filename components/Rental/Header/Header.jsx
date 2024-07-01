@@ -11,7 +11,7 @@ function Header({ image, tipo, marca, modelo, tipoMotor, cajaCambios, autonomia,
     const images = {
         fuel: '/images/Fuel.webp',
         electrico: '/images/Plug.webp',
-        hibrido: '/images/PlugFuel.webp',
+        hibrido: '/images/Plugfuel.webp',
     }
     const imageEngines = {
         BEV: { image: images.electrico, text: "100% Eléctrico", value: "BEV" },
