@@ -24,12 +24,13 @@ export async function getVehicles(params, page = 1) {
 }
 
 export async function getDataFilters() {
-
-    const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
-    if (!response.ok) {
-        return { codeError: response.status }
-    }
-    const data = await response.json()
+    const file = await fs.readFile(process.cwd() + '/app/vehiculos.json', 'utf8');
+    const data = JSON.parse(file);
+    //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
+    //if (!response.ok) {
+        //return { codeError: response.status }
+    //}
+    //const data = await response.json()
 
     const filters = data.aggs.aggregates.reduce((allfilters, filter) => {
         let field = Object.keys(filter)[0]
@@ -46,13 +47,15 @@ export function filterCars(cars, params) {
 }
 export async function getVehicle(id) {
     
-    const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
-    if (!response.ok) {
-        return { codeError: response.status }
-    }
-    const data = await response.json()
+    //const response = await fetch('http://localhost:3000/vehiculos.json', { cache: 'no-store' })
+    //if (!response.ok) {
+        //return { codeError: response.status }
+    //}
+    //const data = await response.json()
 
     // falsear el id
+    const file = await fs.readFile(process.cwd() + '/app/vehiculos.json', 'utf8');
+    const data = JSON.parse(file);
     const idCar=parseInt(id)%10
     
     const vehiculo=transformdata(data.vehiculos.find(car => parseInt(car.id) === idCar))
