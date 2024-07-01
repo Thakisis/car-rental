@@ -1,7 +1,7 @@
 export async function getCities() {
     //await sleep(3000)
     
-    const response = await fetch('http://thakisis.ddns.net:3000/ciudades.json' )
+    const response = await fetch(`${NEXT_PUBLIC_APIURL}/ciudades.json` )
     if (!response.ok) {
         return { codeError: response.status }
     }
@@ -12,7 +12,7 @@ export async function getCities() {
 export async function getCitiesDropOff(origen) {
     //await sleep(3000)
     
-    const response = await fetch('http://thakisis.ddns.net:3000/ciudades.json')
+    const response = await fetch(`${NEXT_PUBLIC_APIURL}/ciudades.json`)
     if (!response.ok) {
         return { codeError: response.status }
     }
