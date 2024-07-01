@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Square from "./Square"
-function ImageSide({ image, alt, children }) {
+export function ImageSide({ image, alt, children }) {
 
     const ImageComponent = image && <Image src={image} alt={alt} fill className="object-cover aspect-square " />
     return (
@@ -15,5 +15,3 @@ function ImageSide({ image, alt, children }) {
     )
 }
 
-export default ImageSide
-//< div className = "relative  h-[20vw] xl:w-auto xl:h-[30%] aspect-square bg-black rounded-xl  overflow-hidden mr-4" >

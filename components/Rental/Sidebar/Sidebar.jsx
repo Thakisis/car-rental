@@ -3,7 +3,7 @@ import { format, intervalToDuration } from "date-fns"
 import { es } from "date-fns/locale"
 import Tooltip from '@/components/Tooltip'
 import Citypicker from "@/components/Citypicker"
-import ParamsDialog from "../ParamsDialog"
+import ParamsDialog from "./ParamsDialog"
 import { createQueryUrl } from "@/lib/queryParams"
 import Link from "next/link"
 
@@ -20,7 +20,7 @@ function Sidebar({ carId, ciudad, dropoff, from, to, ...data }) {
     const cityPicker = <Citypicker writeUrl params={params} />
     const urlQuery = createQueryUrl({ ciudad, dropoff, from, to })
     return (
-        <div className=" w-full mt-12 shadow-md p-5 rounded-xl bg-slate-100 text-lg mb-10">
+        <div className="min-w-[22rem] w-full mt-12 shadow-md p-5 rounded-xl bg-slate-100 text-lg mb-10 ">
             <h4 className="text-2xl font-light text-blue-800 ">Vehiculo</h4>
             <div className="ml-4">{data.nombre}</div>
             <div className="border border-gray-200 my-3"></div>
@@ -58,7 +58,7 @@ function Sidebar({ carId, ciudad, dropoff, from, to, ...data }) {
                 <span > {from && to ? ` ${days * parseFloat(data.precioDia)} €` : "-"} </span>
             </div>
 
-            <div className="pt-8 w-full flex justify-between items-center ">
+            <div className="pt-8 w-full flex  flex-col gap-2 lg:flex-row justify-between items-center ">
                 <Tooltip tooltip={isValidData ? "Asegurese que las fechas son correctas" : "Parametros no validos"} dark>
                     <div>
                         <Button

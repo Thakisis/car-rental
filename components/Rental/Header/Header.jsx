@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Brand from "./Brand"
-import ImageSide from "./ImageSide"
-import TextSide from "./TextSide"
+import { ImageSide, TextSide } from "./Squares"
+
 import { format, formatDistance, formatDuration } from "date-fns"
 import { es } from "date-fns/locale"
 

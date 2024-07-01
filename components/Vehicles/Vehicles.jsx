@@ -14,7 +14,7 @@ export async function Vehicles({ params }) {
     const text = <div><p>Puede cambiar los criterios mostrando el panel de filtros a continuación </p> <MensajeParams from={from} to={to} ciudad={params.ciudad} /></div>
     return (
         <>
-            <div className="flex w-full justify-center flex-col pt-8 container mx-auto">
+            <div className="flex w-full justify-center flex-col pt-8 container mx-auto sm:w-full">
                 <ParamsRecover params={decodeParams} />
                 <div className=" h-20 text-md flex flex-col justify-center items-center w-full mb-10">
                     <p>Puede cambiar los criterios mostrando el panel de filtros a continuación </p>

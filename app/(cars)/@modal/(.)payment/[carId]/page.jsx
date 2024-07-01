@@ -19,19 +19,20 @@ async function Pago({ params, searchParams }) {
     if (!data) notFound()
     return (
 
-        < Dialog className=" justify-center w-auto max-w-none" open={true} >
+        < Dialog className="flex justify-center  w-auto  max-w-52" defaultOpen={true}  >
 
-            <DialogContent className="max-w-none w" routerBack>
+            <DialogContent className=" w-full lg:max-w-[60rem] xl:max-w-[80rem] aspect-none lg:aspect-2/1   " routerBack>
 
                 <PaymentDialog {...data} {...searchParams} />
-                <DialogFooter routerBack >
-                    <DialogClose asChild>
+                <DialogFooter routerBack className="pt-0" >
+                    <DialogClose>
                         <Button type="button" >
                             Cerrar
                         </Button>
                     </DialogClose>
                 </DialogFooter>
             </DialogContent>
+
         </Dialog >
 
     )

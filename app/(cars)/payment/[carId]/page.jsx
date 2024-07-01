@@ -12,16 +12,20 @@ import { Button } from "@/components/ui/button"
 import PaymentDialog from "@/components/PaymentDialog/PaymentDialog"
 import { getVehicle } from "@/server/Queries"
 import { notFound } from "next/navigation"
-import { transformdata } from "@/server/Queries/TransformData"
+import { cn } from "@/lib/utils"
+
 async function Pago({ params, searchParams }) {
 
     const data = await getVehicle(params.carId)
     if (!data) notFound()
+
+
+
     return (
 
-        < Dialog className=" justify-center w-auto max-w-none" defaultOpen={true} portal >
+        < Dialog className=" justify-center  w-auto  max-w-52" defaultOpen={true} portal >
 
-            <DialogContent className="max-w-none w" routerBack>
+            <DialogContent className={cn("w-full lg:max-w-[60rem] xl:max-w-[80rem] aspect-none lg:aspect-2/1    ")} routerBack>
 
                 <PaymentDialog {...data} {...searchParams} />
                 <DialogFooter routerBack >

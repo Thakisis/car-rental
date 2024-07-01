@@ -8,11 +8,11 @@ import MarcasInput from "@/components/MarcasInput"
 export default function SideFilter({ params }) {
 
     return (
-        <Sheet>
+        <Sheet className="">
             <SheetTrigger asChild>
                 <Button >Cambiar Criterios de Busqueda</Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="left" className="sm:w-full ">
                 <SheetHeader>
                     <SheetTitle>Configure su Vehiculo</SheetTitle>
                     <SheetDescription>

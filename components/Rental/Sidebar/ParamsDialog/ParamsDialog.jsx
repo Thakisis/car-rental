@@ -26,7 +26,7 @@ function ParamsDialog({ citiesComponent, ...params }) {
 
     return (
         <>
-            <Button variant={isParams ? "outline" : "default"} onClick={openDialog}>{isParams ? "Modificar datos" : "Seleccionar Fechas / ciudad"}</Button >
+            <Button variant={isParams ? "outline" : "default"} onClick={openDialog}>{isParams ? "Modificar datos" : "Fechas / Ciudad"}</Button >
             < Dialog open={isOpen} defaultOpen={false} onOpenChange={closeDialog}>
                 <DialogContent className="w-[80rem] ">
                     <DialogHeader>
