@@ -6,7 +6,6 @@ import MarcasInput from "@/components/MarcasInput"
 
 
 export default function SideFilter({ params }) {
-
     return (
         <Sheet className="">
             <SheetTrigger asChild>
@@ -24,9 +23,7 @@ export default function SideFilter({ params }) {
                         <Filters {...params}></Filters>
                     </div>
                     <MarcasInput {...params} writeUrl />
-
                 </div>
-
             </SheetContent>
         </Sheet>
     )

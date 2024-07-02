@@ -3,8 +3,6 @@ import * as Iconos from './Icons'
 import { ValueChecker } from "./ValueChecker"
 
 export function Filter({ title, field, icon, values, dataFilter, urlState = [], fullParams }) {
-
-
     const Icono = Iconos[icon]
     const checkersList = values.map((checker) => <ValueChecker key={checker.value} {...checker} {...dataFilter[checker.value]} field={field} checked={include(urlState, checker.value)} fullParams={fullParams} />)
     return (
@@ -15,7 +13,6 @@ export function Filter({ title, field, icon, values, dataFilter, urlState = [], 
                 {checkersList}
             </AccordionContent>
         </AccordionItem>
-
     )
 }
 
