@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="light">
 
-      <body className={inter.className}>
+      <body className={inter.className} style={{scrollbarGutter:"stable"}}>
         <Debug></Debug>
         <NavBar></NavBar>
         <TooltipProvider>
