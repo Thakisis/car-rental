@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { purgeFilters } from './StoreHelpers'
-import {getCitiesDropOff} from '@/server/Queries/getCities'
+import { getCitiesDropOff } from '@/server/QueriesDB'
 import { devtools } from 'zustand/middleware'
 
 const useCarStore = create(devtools((set, get) => ({
@@ -9,29 +9,29 @@ const useCarStore = create(devtools((set, get) => ({
         tiposElectrico: [],
         DeliveryAddress: "",
         alternativeDelivery: "",
-        marcas: [],
+        marcasVehiculo: [],
 
     },
     datesRental: { from: null, to: null },
-    citiesRental:{ciudad:null, dropoff:null},
+    citiesRental: { ciudad: null, dropoff: null },
     listDropOff: [],
     isCalendar: false,
     cleanFilter: [],
     stripeData: null,
     dateVehicleDialog: false,
     Actions: {
-        async setCity({key, value}){
-            set(({citiesRental}) => ({citiesRental:{...citiesRental, [key]:value ?? null}}))
-            if(key === "ciudad"){
-            
-                const destinos= await getCitiesDropOff(value)
-                set({listDropOff: destinos} )
+        async setCity({ key, value }) {
+            set(({ citiesRental }) => ({ citiesRental: { ...citiesRental, [key]: value ?? null } }))
+            if (key === "ciudad") {
+
+                const destinos = await getCitiesDropOff(value)
+                set({ listDropOff: destinos })
             }
-            
+
         },
 
-        openVehicleDialog(isOpen){
-            set({dateVehicleDialog:isOpen})
+        openVehicleDialog(isOpen) {
+            set({ dateVehicleDialog: isOpen })
         },
         async getClientSecret(price) {
             const clientSecret = await getSecret(price)
@@ -51,7 +51,7 @@ const useCarStore = create(devtools((set, get) => ({
             if (fields.includes(field)) {
                 console.log("entro")
                 const filtro = get().homeFilter[field]
-                
+
                 const newFiltro = isChecked && !filtro.includes(value) ? [...filtro, value] : filtro.filter(item => item !== value)
                 console.log(newFiltro)
                 set({ homeFilter: { ...get().homeFilter, [field]: newFiltro } })

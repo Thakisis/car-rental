@@ -21,14 +21,14 @@ export function ValueChecker({ field, value, text, disponible, numVehiculos, ful
         router.push(`/vehiculos?${queryUrl}`, { shallow: true })
 
     }
-    return (<div className={`items-top flex space-x-2 ${disponible ? "text-gray-800" : "text-red-500"}`}>
+    return (<div className={`items-top flex space-x-2 ${disponible ? "text-gray-800" : "text-gray-400"}`}>
         <Checkbox id={value} disabled={!disponible} checked={checked} onCheckedChange={switchHandler} />
         <div className="grid gap-1.5 leading-none">
             <label
                 htmlFor={value}
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                className={`text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 `}
             >
-                {text} ({numVehiculos})
+                {text}{disponible && ` (${numVehiculos})`}
             </label>
         </div>
     </div>)

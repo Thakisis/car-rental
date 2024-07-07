@@ -4,48 +4,36 @@ import useCarStore from '@/Store/Store'
 import { useRouter, usePathname } from 'next/navigation'
 import { createQueryUrl } from '@/lib/queryParams'
 import { useEffect } from 'react'
-//electric vehicle brands
-const OPTIONS = [
-    { label: 'Tesla', value: 'tesla' },
-    { label: 'Ford', value: 'ford' },
-    { label: 'Chevrolet', value: 'chevrolet' },
-    { label: 'BMW', value: 'bmw' },
-    { label: 'Audi', value: 'audi' },
-    { label: 'Mercedes', value: 'mercedes' },
-    { label: 'Volvo', value: 'volvo' },
-
-
-]
-
-const MarcasSideBar = ({ writeUrl, ...params }) => {
-    const brands = useCarStore(state => state.homeFilter.brands)
+const MarcasInput = ({ writeUrl, marcas, ...params }) => {
+    const marcasVehiculo = useCarStore(state => state.homeFilter.marcasVehiculo)
     const setHomeFilter = useCarStore(state => state.Actions.setHomeFilter)
     const router = useRouter()
     const pathName = usePathname()
+    console.log(<marcas></marcas>)
     /* eslint-disable */
     useEffect(() => {
 
-        if (!params.brands || brands) return
-        setHomeFilter({ brands: params.brands })
+        if (!params.marcasVehiculo || marcasVehiculo) return
+        setHomeFilter({ marcasVehiculo: params.marcasVehiculo })
     }, [])
     const changeHandler = (selected) => {
-        const brands = selected.map(item => item.label)
-        setHomeFilter({ brands: brands })
+        const marcasVehiculo = selected.map(item => item.label)
+        setHomeFilter({ marcasVehiculo: marcasVehiculo })
         if (!writeUrl) return
         const newParams = { ...params }
-        newParams.brands = brands.join(",")
+        newParams.marcasVehiculo = marcasVehiculo.join(",")
         const url = createQueryUrl(newParams)
         router.replace(`${pathName}?${url}`)
 
     }
-    const valueSel = brands?.map(item => ({ label: item, value: item.toLowerCase() }))
+    const valueSel = marcasVehiculo?.map(item => ({ label: item, value: item.toLowerCase() }))
     return (
         <>
 
             <h3 className="mt-4 mb-2 ">Marcas de vehículos</h3>
             <MultipleSelector
                 onChange={changeHandler}
-                defaultOptions={OPTIONS}
+                defaultOptions={marcas}
                 placeholder="Añada marcas de vehículos"
                 value={valueSel}
                 hidePlaceholderWhenSelected
@@ -59,4 +47,4 @@ const MarcasSideBar = ({ writeUrl, ...params }) => {
     )
 }
 
-export default MarcasSideBar
+export default MarcasInput

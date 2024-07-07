@@ -1,10 +1,6 @@
 
-import { Button } from "@/components/ui/button"
-
-import { MapPinned, MapPin } from "lucide-react"
-import { getCities } from "@/server/Queries/getCities"
+import { getCities } from "@/server/QueriesDB"
 import CityComboOrigen from "./CityComboOrigen"
-import CityComboDestino from "./CityComboDestino"
 import AddDropoff from "./AddDropoff"
 async function CityPicker({ writeUrl, params, children }) {
     const cities = await getCities()

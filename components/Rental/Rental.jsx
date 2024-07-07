@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation"
 import Header from "./Header"
-import { getVehicle } from "@/server/Queries"
+
+import { getVehicle as getVehicle } from "@/server/QueriesDB"
 import Content from "./Content"
 import Sidebar from "./Sidebar"
 import BackButton from "./BackButton"
 async function Rental({ carId, searchParams }) {
     const data = await getVehicle(carId)
+
     if (!data) notFound()
     return (
         <div className="flex flex-col justify-start items-center  w-full  pt-24  ">
@@ -20,7 +22,6 @@ async function Rental({ carId, searchParams }) {
                 </section>
 
                 <aside className="w-full xl:w-1/4 flex flex-col items-center ">
-
                     <Sidebar carId={carId} {...data} {...searchParams} />
                 </aside>
             </div>
